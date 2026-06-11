@@ -32,7 +32,7 @@ a {
 
 nav {
   width: 100%;
-  background-color: #c41e3a;
+  background-color: red;
   border-radius: 10px;
 }
 
@@ -49,7 +49,7 @@ nav a {
 
 nav a:hover {
   background-color: white;
-  color: #c41e3a;
+  color: red;
 }
 
 #maincontent {
@@ -72,7 +72,7 @@ nav a:hover {
 #rightpanel {
   flex: 1;
   min-width: 280px;
-  background-color: #1e4d8c;
+  background-color: rgb(0, 17, 255);
   color: white;
   border-radius: 10px;
   padding: 20px 24px;
