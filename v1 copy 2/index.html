@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NYC Wi-Fi Hotspots</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+
+    <div id="header" class="container">
+      <h1>NYC Wi-Fi Hotspots</h1>
+    </div>
+
+    <nav class="container">
+      <a href="index.html">Home</a>
+      <a href="info.html">Info</a>
+      <a href="analysis.html">Analysis</a>
+    </nav>
+
+    <main class="container" id="maincontent">
+      <aside id="leftpanel">
+        <img id="homeimage" src="https://th.bing.com/th/id/OIP.4Jfjr9-FWPdqAmzf7olwEQHaHa?w=193&h=193&c=7&r=0&o=7&pid=1.7&rm=3" alt="NYC public Wi-Fi hotspot">
+      </aside>
+
+      <div id="rightpanel">
+        <section>
+          <h2>About the data provider</h2>
+          <p>
+            This website uses data from NYC Open Data, the City of New York's public data portal.
+            The Wi-Fi hotspot records are published by the Office of Technology and Innovation,
+            formerly known as the Department of Information Technology and Telecommunications.
+            OTI supports city technology services and makes datasets available so residents, students, and researchers
+            can understand how public resources are distributed across the five boroughs.
+          </p>
+        </section>
+
+        <section>
+          <h2>About the dataset</h2>
+          <p>
+            We use the NYC Wi-Fi Hotspot Locations dataset, stored on this site as mvc.json.
+            Each record describes a public Wi-Fi location and includes fields such as provider, hotspot name,
+            borough, city, zip code, Wi-Fi type , SSID, and latitude/longitude
+            coordinates. The data covers parks, public spaces, and other city-supported access points.
+          </p>
+        </section>
+
+        <section>
+          <h2>Why this data matters</h2>
+          <p>
+            Reliable internet access is important for schoolwork, job searches, healthcare, and everyday life.
+            Mapping where free public Wi-Fi is available helps show which neighborhoods are well served and where
+            gaps may remain. This site makes the open dataset easier to explore by listing hotspot details and
+            offering simple filters, so users do not need to download and search the raw file on their own.
+          </p>
+        </section>
+
+        <section>
+          <h2>What you will find on this site</h2>
+          <p><strong>Info page:</strong> Browse individual hotspot records shown as cards (provider, city, location name, zip, and type). Use dropdown filters to search by borough, or combine borough and provider to narrow results.</p>
+          <p><strong>Analysis page:</strong> View charts that summarize patterns in the data, including line, bar, pie, and doughnut visualizations (for example, hotspots by borough or by provider).</p>
+        </section>
+      </div>
+    </main>
+
+    <div id="footer">
+      <p>&copy; NYC Open Data Project. All Rights Reserved.</p>
+      <p>Content and design by Owen Yang and Isaac Zhao.</p>
+    </div>
+
+  </body>
+</html>

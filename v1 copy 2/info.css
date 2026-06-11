@@ -1,0 +1,141 @@
+html, body {
+  margin: 0 auto;
+  font-family: Arial;
+  background-color: #ffffff;
+}
+
+.container {
+  display: flex;
+  padding: 10px;
+  flex-wrap: wrap;
+}
+
+.center {
+  justify-content: center;
+  align-items: center;
+}
+
+nav {
+  background-color: rgb(255, 0, 0);
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: white;
+  padding: 20px;
+  flex: 1;
+  text-decoration: none;
+  text-align: center;
+  font-size: 20px;
+  transition: 0.5s;
+}
+
+nav a:hover {
+  background-color: white;
+  color: red;
+}
+
+#intro {
+  background-color: red;
+  color: white;
+  width: 100%;
+  padding: 12px 16px;
+}
+
+#banner {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  width: 100%;
+}
+
+#footer {
+  background-color: red;
+  color: white;
+  width: 100%;
+  border-radius: 10px;
+  padding: 10px 0;
+  text-align: center;
+}
+
+#pagebody {
+  width: 100%;
+}
+
+.card {
+  flex: 1;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid gray;
+  text-align: center;
+  box-shadow: 2px 2px 2px black;
+  border-radius: 2px;
+  background-color: #ffffff;
+}
+
+.highlight {
+  font-style: italic;
+  color: red;
+}
+
+.heading {
+  font-weight: bold;
+  color: darkred;
+}
+
+.button {
+  text-decoration: none;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+  box-shadow: 2px 2px 2px black;
+  transition: 0.3s;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.button:hover {
+  background-color: darkred;
+}
+
+#output {
+  flex-wrap: wrap;
+  background-color: #ffffff;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+#leftPanel {
+  flex: 1;
+}
+
+#rightPanel {
+  flex: 2;
+  background-color: rgb(0, 17, 255);
+  color: white;
+  min-height: 300px;
+  font-size: large;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.fitted {
+  max-width: 220px;
+  min-width: 220px;
+  background-color: #3700ff;
+  color: white;
+  text-align: left;
+}
+
+#result {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  max-width: 100%;
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}

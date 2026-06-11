@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>NYC Wi-Fi Hotspots - Info</title>
+    <link href="info.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div id="banner" class="container center">
+      <h1>NYC Wi-Fi Hotspots</h1>
+    </div>
+
+    <nav class="container">
+      <a href="index.html">Home</a>
+      <a href="info.html">Info</a>
+      <a href="analysis.html">Analysis</a>
+    </nav>
+
+    <div id="intro" class="container">
+      <p>
+        This page loads hotspot records from the NYC Open Data NYC Wi-Fi Hotspot Locations dataset
+        . Each card shows key details for one location. Use the filters on the left to narrow
+        results, then click Search. Choose one filter at a time, or use borough and provider together
+        . Click Show All to load every record again.
+      </p>
+    </div>
+
+    <div id="pagebody" class="container">
+      <div id="leftPanel">
+        <div class="card">
+          <h3>Filter by Provider</h3>
+          <p><span class="highlight">Scenario:</span> Show hotspots from one internet provider.</p>
+          <select id="providers"></select>
+          <hr>
+          <button type="button" class="button" onclick="filterByProvider()">Search</button>
+        </div>
+        <div class="card">
+          <h3>Filter by Borough</h3>
+          <p><span class="highlight">Scenario:</span> Show hotspots in one borough.</p>
+          <select id="boroughs"></select>
+          <hr>
+          <button type="button" class="button" onclick="filterByBorough()">Search</button>
+        </div>
+        <div class="card">
+          <h3>Filter by Borough and Provider</h3>
+          <p><span class="highlight">Scenario:</span> Show hotspots that match both borough and provider.</p>
+          <select id="boroughs2"></select>
+          <select id="providers2"></select>
+          <hr>
+          <button type="button" class="button" onclick="filterByBoroughAndProvider()">Search</button>
+        </div>
+        <div class="card">
+          <button type="button" class="button" onclick="showAll()">Show All</button>
+        </div>
+      </div>
+
+      <div class="card" id="rightPanel">
+        <h2>Hotspot Results</h2>
+        <div id="result" class="container"></div>
+        <div id="output" class="container"></div>
+      </div>
+    </div>
+
+    <div id="footer" class="container center">
+      <p>&copy; NYC Open Data Project. All Rights Reserved.</p>
+      <p>Content and design by Owen Yang and Isaac Zhao.</p>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+      init();
+    </script>
+  </body>
+</html>

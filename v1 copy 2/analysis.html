@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>NYC Wi-Fi Hotspots - Analysis</title>
+    <link href="analysis.css" rel="stylesheet" type="text/css" />
+    <link href="c3.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body onload="init()">
+    <div id="banner" class="container center">
+      <h1>NYC Wi-Fi Hotspots - Analysis</h1>
+    </div>
+
+    <nav class="container">
+      <a href="index.html">Home</a>
+      <a href="info.html">Info</a>
+      <a href="analysis.html">Analysis</a>
+    </nav>
+
+    <div id="intro" class="container">
+      <p>
+        This page uses the <a href="https://c3js.org/">c3.js</a> chart library (built on
+        <a href="https://d3js.org/">d3.js</a>) to summarize NYC Open Data Wi-Fi hotspot records.
+        Click a button to generate a chart in the panel on the right.
+      </p>
+    </div>
+
+    <div id="pagebody" class="container">
+      <div id="panel">
+        <div class="card">
+          <h3>Hotspots by Borough</h3>
+          <p><span class="highlight">Scenario:</span> Compare how many Wi-Fi hotspots are in each borough.</p>
+          <a class="button" onclick="boroughChart('line')">Line</a>
+          <a class="button" onclick="boroughChart('bar')">Bar</a>
+        </div>
+
+        <div class="card">
+          <h3>Wi-Fi Type</h3>
+          <p><span class="highlight">Scenario:</span> Show the split between free and limited free hotspots.</p>
+          <a class="button" onclick="typeChart()">Pie</a>
+        </div>
+
+        <div class="card">
+          <h3>Top Providers</h3>
+          <p><span class="highlight">Scenario:</span> Display the top providers by number of hotspots.</p>
+          <a class="button" onclick="providerChart()">Pie</a>
+        </div>
+
+        <div class="card">
+          <h3>Borough Share</h3>
+          <p><span class="highlight">Scenario:</span> Show each borough as a share of all hotspots.</p>
+          <a class="button" onclick="boroughDonut()">Doughnut</a>
+        </div>
+      </div>
+
+      <div class="card" id="chartcard">
+        <div id="chart"></div>
+        <p id="chartmessage"></p>
+      </div>
+    </div>
+
+    <div id="footer" class="container center">
+      <p>&copy; NYC Open Data Project. All Rights Reserved.</p>
+      <p>Content and design by Owen Yang and Isaac Zhao.</p>
+    </div>
+
+    <script src="c3.js"></script>
+    <script src="d3.js"></script>
+    <script src="analysis.js"></script>
+  </body>
+</html>
