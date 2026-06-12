@@ -108,9 +108,5 @@ function filterByBoroughAndProvider() {
   document.getElementById("output").innerHTML = build;
 }
 
-function showAll() {
-  displayAllData();
-}
-
 // Set init to run after DOM loads
 window.onload = init;
