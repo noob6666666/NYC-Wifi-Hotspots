@@ -5,8 +5,8 @@ async function init() {
   info = await fetch(link);
   data = await info.json();
 
-  document.getElementById("boroughs").innerHTML = fillDropDown("borough");
-  document.getElementById("boroughs2").innerHTML = fillDropDown("borough");
+  document.getElementById("boroughs").innerHTML = fillDropDown("boroname");
+  document.getElementById("boroughs2").innerHTML = fillDropDown("boroname");
   document.getElementById("providers").innerHTML = fillDropDown("provider");
   document.getElementById("providers2").innerHTML = fillDropDown("provider");
 
@@ -31,22 +31,10 @@ function displayAllData() {
 }
 
 function fillDropDown(field) {
-  let list = ["Select Option"];
+  let values = [...new Set(data.map(item => item[field]).filter(Boolean))].sort();
   let build = `<option>Select Option</option>`;
-
-  for (let i = 0; i < data.length; i++) {
-    let data_field = data[i];
-    if (data_field[field] && !list.includes(data_field[field])) {
-      list.push(data_field[field]);
-    }
-  }
-
-  list.sort();
-
-  for (let fieldValue of list) {
-    if (fieldValue !== "Select Option") {
-      build += `<option>${fieldValue}</option>`;
-    }
+  for (let value of values) {
+    build += `<option>${value}</option>`;
   }
   return build;
 }
@@ -62,7 +50,7 @@ function filterByBorough() {
 
   for (let i = 0; i < data.length; i++) {
     let complaint = data[i];
-    if (complaint.borough === borough) {
+    if (complaint.boroname === borough) {
       build += `<div class="fitted card">
                 <h3>${complaint.provider}</h3>
                 <hr>
@@ -92,7 +80,7 @@ function filterByBoroughAndProvider() {
 
   for (let i = 0; i < data.length; i++) {
     let complaint = data[i];
-    if (complaint.borough === borough && complaint.provider === provider) {
+    if (complaint.boroname === borough && complaint.provider === provider) {
       build += `<div class="fitted card">
                 <h3>${complaint.provider}</h3>
                 <hr>
