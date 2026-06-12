@@ -1,7 +1,7 @@
 
 
-let boroughLabels = ["Queens", "Brooklyn", "Manhattan", "Bronx", "Staten Island"];
-let boroughCounts = ["Hotspots", 140, 203, 516, 105, 36];
+let boroughLabels = ["Manhattan", "Bronx", "Brooklyn", "Queens", "Staten Island"];
+let boroughCounts = ["Hotspots", 516, 105, 203, 140, 36];
 let wifiTypeData = [
   ["Limited Free", 177],
   ["Free", 823]
@@ -15,10 +15,10 @@ let providerData = [
   ["Downtown Brooklyn", 29]
 ];
 let boroughDonutData = [
-  ["Queens", 140],
-  ["Brooklyn", 203],
   ["Manhattan", 516],
   ["Bronx", 105],
+  ["Brooklyn", 203],
+  ["Queens", 140],
   ["Staten Island", 36]
 ];
 
@@ -29,8 +29,12 @@ function init(){
 
 
 function boroughChart(type){
-  let data = [boroughCounts];
-  displayChart(data, "chart", type, boroughLabels);
+  document.getElementById("chart").innerHTML = "";
+  c3.generate({
+    bindto: "#chart",
+    data: { columns: [boroughCounts], type: type },
+    axis: { x: { type: "category", categories: boroughLabels } }
+  });
   document.getElementById("chartmessage").innerHTML = "Showing hotspots by borough (" + type + " chart).";
 }
 
@@ -53,20 +57,12 @@ function boroughDonut(){
 }
 
 
-function displayChart(data, chart_id, chart_type, categories){
+function displayChart(data, chart_id, chart_type){
   document.getElementById(chart_id).innerHTML = "";
-
-
-  let options = {
+  c3.generate({
     bindto: "#" + chart_id,
-    data: {
-      columns: data,
-      type: chart_type
-    }
-  };
-
-
-  c3.generate(options);
+    data: { columns: data, type: chart_type }
+  });
 }
 
 
